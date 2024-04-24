@@ -374,6 +374,8 @@ $(function () {
 
  function openRazorpay(){
 
+	event.preventDefault();
+
 
 	// Prompt the user to enter the donation amount
     var donationAmount = prompt("Please enter the donation amount (INR):");
