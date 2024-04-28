@@ -217,7 +217,7 @@ button {
 }
 
 .layout_padding {
-    padding-top: 90px;
+    padding-top: 50px;
     padding-bottom: 0px;
 }
 
@@ -299,7 +299,7 @@ button.donate_btn {
 .banner_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../images/mother.jpg);
     height: 550px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -307,7 +307,16 @@ button.donate_btn {
     /* top: -70px; */
     margin-bottom: 0;
 }
-
+.banner_section::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 100%;
+    height: 550px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black color */
+    z-index: 1; /* Ensure the overlay is above the background image */
+}
 .banner_taital {
     width: 45%;
     margin: 0 auto;
@@ -330,7 +339,7 @@ button.donate_btn {
 }
 
 .read_bt {
-    width: 150px;
+    width: 130px;
     margin: 0 auto;
     text-align: center;
 }
@@ -712,7 +721,7 @@ button.donate_btn {
     font-size: 26px;
     color: #1d1d1d;
     font-weight: bold;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     text-transform: uppercase;
 }
 
@@ -1092,7 +1101,7 @@ button.donate_btn {
 
 .footer_text {
     width: 100%;
-    float: left;
+    /* float: left; */
     font-size: 17px;
     color: #afafaf;
     margin: 5px 0px;
@@ -1233,4 +1242,20 @@ input.address_text::placeholder {
     font-size: 25px;
     font-weight: 800;
     color: #120a78;
+    margin-bottom: 3px;
+}
+.lonosecName{
+    font-size: 15px;
+    font-weight: 600;
+    color: #120a78;
+    margin-top: 3px;
+}
+.spanclass{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hello{
+    z-index: 99;
 }
