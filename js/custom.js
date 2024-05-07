@@ -370,39 +370,18 @@ $(function () {
 
 });
 
-// rzp_test_dp2grfjSjmXErr
 
- function openRazorpay(){
 
+  
+var popupButtons = document.querySelectorAll(".openPopup");
+
+popupButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
 	event.preventDefault();
+    document.querySelector(".popup").style.display = "block";
+  });
+});
 
-
-	// Prompt the user to enter the donation amount
-    var donationAmount = prompt("Please enter the donation amount (INR):");
-    if (!donationAmount || isNaN(donationAmount) || donationAmount <= 0) {
-      alert("Invalid donation amount. Please enter a valid positive number.");
-      return;
-    }
-    var amountInPaise = Math.round(donationAmount * 100);
-
-
-    var options = {
-      key: 'rzp_test_dp2grfjSjmXErr',  // Replace with your Razorpay API Key
-      amount: amountInPaise,                  // Amount in paise (e.g., 10000 paise = ₹100)
-      currency: 'INR',                // Currency
-      name: 'St. George Mission Charity Foundation',
-      description: 'Donation for a noble cause',
-      image: 'https://http://stgeorgecharity.org/images/WhatsApp_Image_2024-04-24_at_10.53.40_549ea74b-removebg.png', // Your logo URL
-      handler: function(response) {
-        alert('Payment successful! Transaction ID: ' + response.razorpay_payment_id);
-        // You can handle further processing (e.g., update database) here
-      }, 
-	   theme: {
-		color:'#120a78' // Customize checkout theme color (optional)
-	}
-
-    };
-
-    var rzp = new Razorpay(options);
-    rzp.open();
-  }
+function closePopup() {
+  document.querySelector(".popup").style.display = "none";
+}
